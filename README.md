@@ -1,2 +1,1 @@
-# b-encrypty
-encryption code for messaging
+# XX Network
