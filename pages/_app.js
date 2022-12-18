@@ -1,6 +1,6 @@
 import PropType from 'prop-types'
 import { ThemeProvider } from 'next-themes'
-import Layout from 'components/layout'
+import Layout from 'components/layout/layout'
 import 'styles/globals.css'
 import store from '../store'
 import { Provider } from 'react-redux'
