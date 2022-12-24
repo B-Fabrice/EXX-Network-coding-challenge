@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className=''>
@@ -9,7 +11,7 @@ export default function Home() {
         <p className='mt-10 max-w-md mx-auto'>
           Welcome to the EXX Developer’s Guide. Now you can begin building your first DApp on EXX.
         </p>
-        <div className='flex justify-center mt-8 gap-6'>
+        <div className='flex justify-center my-8 gap-6'>
           <button className='md:inline-flex hidden bg-primary font-bold px-20 py-4 w-fit rounded-xl text-white'>
             Get Started
           </button>
@@ -35,13 +37,42 @@ export default function Home() {
             Join Community
           </button>
         </div>
-        <div className='mx-auto rounded-3xl max-w-4xl shadow-md mt-10'>
+        <div className='mx-auto rounded-3xl max-w-4xl shadow-md my-10'>
           <iframe
             src='https://docs.exx.network'
             scrolling='no'
             height={500}
             className='w-full overflow-y-scroll'
           ></iframe>
+        </div>
+        <div className='bg-black flex gap-8 flex-wrap justify-evenly py-10 px-8'>
+          {[
+            { name: 'Documentation', link: 'https://docs.exx.network', caption: 'EXX seamless swap portal' },
+            { name: 'Exx Incubator', link: 'https://exx.network', caption: 'Launch with EXX platform' },
+            { name: 'Video Tutorial', link: 'https://www.youtube.com/watch?v=L4bQd-PqWP0', caption: 'Earn seamlessly with EXX' },
+          ].map((item, index) => (
+            <div key={index} className='w-fit text-left'>
+              <Link
+                href={item.link}
+                target='_blank'
+                className='text-white inline-flex items-center font-bold'
+              >
+                <span className='mr-2'>{item.name}</span>
+                <svg xmlns='http://www.w3.org/2000/svg' width='11' height='10' viewBox='0 0 11 10' fill='none'>
+                  <path
+                    d='M3.12479 1.46449L9.01735 1.46449M9.01735 1.46449L9.01734 7.35705M9.01735 1.46449L1.94628 8.53556'
+                    stroke='white'
+                    strokeWidth='2.07917'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  />
+                </svg>
+              </Link>
+              <p className='text-gray-300'>{item.caption}</p>
+            </div>
+
+          ))
+          }
         </div>
       </div>
     </div>
