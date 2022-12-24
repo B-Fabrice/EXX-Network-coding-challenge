@@ -1,0 +1,16 @@
+jobs:
+  lint_and_build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn lint
+          name: Run tests
+      - run:
+          command: yarn build
+          name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths: .
