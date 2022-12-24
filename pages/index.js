@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -70,9 +71,34 @@ export default function Home() {
               </Link>
               <p className='text-gray-300'>{item.caption}</p>
             </div>
-
           ))
           }
+        </div>
+        <div className='relative'>
+          <div className='bg-primary absolute top-0 right-0 left-0 bottom-[30px] -z-10'></div>
+          <h2 className='white text-white font-bold text-4xl py-20'>Your journey to developing your first dapp.</h2>
+          <div className='bg-white rounded-3xl flex justify-between max-w-5xl mx-auto p-7 shadow-md'>
+            {[
+              {src:'/dev_icon1.png', title:'Write Smart Contract', desc:'Write instructions via code on the Exx network.', instry: '{solidity}'},
+              {src:'/dev_icon2.png', title:'Build Web Apps', desc:'Build a frontend application for easier interaction', instry: '{next} {react}'},
+              {src:'/dev_icon3.png', title:'Integrate Dapp', desc:'Connect your contract with your web app.', instry: '{web3.js} {ethers.js}'},
+            ].map((item, index) => (
+              <div className='text-left py-5 px-6' key={index}>
+                <Image
+                  src={item.src}
+                  alt='icon'
+                  width={56}
+                  height={56}
+                />
+                <h2 className='text-2xl font-bold mb-5 mt-4 text-black'>{item.title}</h2>
+                <p className='text-gray-700'>
+                  {item.desc}<br />
+                  {item.instry}
+                </p>
+              </div>
+            ))
+            }
+          </div>
         </div>
       </div>
     </div>
