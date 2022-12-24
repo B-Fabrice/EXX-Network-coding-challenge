@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-commit": "echo test",
+    "pre-commit": "yarn lint",
     "pre-push": "echo test"
   }
 }
