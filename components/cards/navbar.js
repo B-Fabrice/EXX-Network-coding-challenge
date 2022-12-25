@@ -11,10 +11,10 @@ export default function Navbar() {
         <div>
           <Image
             src='/logo.png'
-            className=''
             width={200}
             height={200}
             alt='b encrypty logo'
+            className='h-full w-full'
           />
         </div>
       </div>
@@ -25,13 +25,13 @@ export default function Navbar() {
               <Link
                 key={index}
                 href='/about'
-                className='block md:w-fit'>
+                className='block md:w-fit font-semibold text-sm'>
                 {item}
               </Link>
             ))}
           </div>
           <div
-            className='inline-flex items-center self-center gap-2 cursor-pointer relative'
+            className='inline-flex items-center font-semibold text-sm self-center gap-2 cursor-pointer relative'
             onClick={() => setIsShow(!isShow)}
           >
             <svg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -108,7 +108,7 @@ export default function Navbar() {
                   <Link
                     key={index}
                     href=''
-                    className='block px-10 hover:bg-gray-100 transition duration-200 ease-in-out font-bold py-4'
+                    className='block px-10 hover:bg-gray-100 font-semibold text-sm transition duration-200 ease-in-out py-4'
                   >
                     {item}
                   </Link>
