@@ -1,3 +1,4 @@
+import JoinCommunity from 'components/join_community'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -9,9 +10,11 @@ export default function Home() {
           Start building apps with
           <span className='text-primary ml-2'>useful cases</span>
         </h1>
+
         <p className='mt-10 max-w-md mx-auto'>
           Welcome to the EXX Developer’s Guide. Now you can begin building your first DApp on EXX.
         </p>
+
         <div className='flex justify-center my-8 gap-6'>
           <button className='md:inline-flex hidden bg-primary font-bold px-20 py-4 w-fit rounded-xl text-white'>
             Get Started
@@ -28,16 +31,11 @@ export default function Home() {
               />
             </svg>
           </button>
-          <button className='md:hidden inline-flex text-white border bg-primary font-bold px-20 py-4 w-fit rounded-xl'>
-            <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'>
-              <path
-                d='M19.6791 5.45084C18.354 4.85254 16.9329 4.41173 15.4471 4.15926C15.42 4.15439 15.393 4.16657 15.379 4.19092C15.1963 4.51077 14.9939 4.92804 14.8521 5.25601C13.254 5.02058 11.6641 5.02058 10.0988 5.25601C9.957 4.92073 9.7472 4.51077 9.56363 4.19092C9.54969 4.16738 9.52265 4.1552 9.49561 4.15926C8.01061 4.41092 6.58953 4.85173 5.26353 5.45084C5.25205 5.45571 5.24222 5.46383 5.23566 5.47438C2.54021 9.43679 1.80181 13.3018 2.16405 17.1189C2.16569 17.1375 2.17634 17.1554 2.19109 17.1668C3.96948 18.4519 5.69214 19.232 7.38284 19.7491C7.40989 19.7572 7.43857 19.7475 7.45578 19.7256C7.85572 19.1882 8.21221 18.6215 8.5179 18.0257C8.53593 17.9908 8.51872 17.9494 8.48184 17.9355C7.91636 17.7245 7.37793 17.4671 6.85998 17.1749C6.819 17.1513 6.81573 17.0937 6.85343 17.0661C6.96242 16.9857 7.07142 16.9021 7.1755 16.8177C7.19435 16.8023 7.22058 16.799 7.2427 16.8088C10.6454 18.3374 14.3292 18.3374 17.6918 16.8088C17.7139 16.7982 17.7401 16.8015 17.7598 16.8169C17.8639 16.9013 17.9729 16.9857 18.0827 17.0661C18.1204 17.0937 18.1179 17.1513 18.077 17.1749C17.559 17.4728 17.0206 17.7245 16.4543 17.9347C16.4174 17.9485 16.401 17.9908 16.419 18.0257C16.7313 18.6207 17.0878 19.1873 17.4803 19.7248C17.4967 19.7475 17.5262 19.7572 17.5533 19.7491C19.2522 19.232 20.9748 18.4519 22.7532 17.1668C22.7688 17.1554 22.7786 17.1384 22.7803 17.1197C23.2138 12.7067 22.0542 8.8734 19.7062 5.47519C19.7005 5.46383 19.6906 5.45571 19.6791 5.45084ZM9.02601 14.7947C8.00159 14.7947 7.15747 13.8692 7.15747 12.7327C7.15747 11.5962 7.9852 10.6707 9.02601 10.6707C10.075 10.6707 10.9109 11.6043 10.8946 12.7327C10.8946 13.8692 10.0668 14.7947 9.02601 14.7947ZM15.9347 14.7947C14.9103 14.7947 14.0661 13.8692 14.0661 12.7327C14.0661 11.5962 14.8939 10.6707 15.9347 10.6707C16.9837 10.6707 17.8196 11.6043 17.8032 12.7327C17.8032 13.8692 16.9837 14.7947 15.9347 14.7947Z'
-                fill='#E6F4FD'
-              />
-            </svg>
-            Join Community
-          </button>
+          <div className='md:hidden'>
+            <JoinCommunity />
+          </div>
         </div>
+
         <div className='mx-auto rounded-3xl max-w-4xl shadow-md my-10'>
           <iframe
             src='https://docs.exx.network'
@@ -46,6 +44,7 @@ export default function Home() {
             className='w-full overflow-y-scroll'
           ></iframe>
         </div>
+
         <div className='bg-black flex gap-8 flex-wrap justify-evenly py-10 px-8'>
           {[
             { name: 'Documentation', link: 'https://docs.exx.network', caption: 'EXX seamless swap portal' },
@@ -74,14 +73,15 @@ export default function Home() {
           ))
           }
         </div>
+
         <div className='relative'>
           <div className='bg-primary absolute top-0 right-0 left-0 bottom-[30px] -z-10'></div>
           <h2 className='white text-white font-bold text-4xl py-20'>Your journey to developing your first dapp.</h2>
           <div className='bg-white rounded-3xl flex justify-between max-w-5xl mx-auto p-7 shadow-md'>
             {[
-              {src:'/dev_icon1.png', title:'Write Smart Contract', desc:'Write instructions via code on the Exx network.', instry: '{solidity}'},
-              {src:'/dev_icon2.png', title:'Build Web Apps', desc:'Build a frontend application for easier interaction', instry: '{next} {react}'},
-              {src:'/dev_icon3.png', title:'Integrate Dapp', desc:'Connect your contract with your web app.', instry: '{web3.js} {ethers.js}'},
+              { src: '/dev_icon1.png', title: 'Write Smart Contract', desc: 'Write instructions via code on the Exx network.', instry: '{solidity}' },
+              { src: '/dev_icon2.png', title: 'Build Web Apps', desc: 'Build a frontend application for easier interaction', instry: '{next} {react}' },
+              { src: '/dev_icon3.png', title: 'Integrate Dapp', desc: 'Connect your contract with your web app.', instry: '{web3.js} {ethers.js}' },
             ].map((item, index) => (
               <div className='text-left py-5 px-6' key={index}>
                 <Image
@@ -100,6 +100,137 @@ export default function Home() {
             }
           </div>
         </div>
+
+        <div className='p-24 flex gap-20 mt-24 mx-auto max-w-5xl rounded-3xl bg-slate-100'>
+          <div className='flex-1'>
+            <h2 className='text-4xl font-bold'>Get connected to the EXX Network</h2>
+            <div className='flex gap-5 mt-12'>
+              <button className='bg-primary text-white px-5 py-4 rounded-lg w-full block'>
+                Add to Metamask
+              </button>
+              <button className='border-secondary px-5 py-4 rounded-lg block w-full border-2'>
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div className='flex-1 whitespace-nowrap flex flex-col gap-5 text-left'>
+            {[
+              { key: 'PRC URL:', value: 'https://ds2.exx.network' },
+              { key: 'Network name:', value: 'Exx Testnet' },
+              { key: 'Symbol:', value: 'EXX' },
+              { key: 'Chain ID:', value: '47' },
+              { key: 'Block Explorer:', value: 'https://exxscan.com' },
+            ].map((item, index) => (
+              <div key={index}>
+                <span className='text-gray-600 font-light mr-2'>{item.key}</span>{item.value}
+              </div>
+            ))
+            }
+          </div>
+        </div>
+
+        <div className='mt-20 flex justify-between max-w-5xl mx-auto p-7'>
+          {[
+            { title: 'Documentation', desc: 'Everything needed to build on Exx', link_name: 'View docs', link: '#' },
+            { title: 'Watch & Learn', desc: 'Solidity made easy with recordings', link_name: 'Watch now', link: '#' },
+            { title: 'Blockchain Explorer', desc: 'Explore transactions on Exx', link_name: 'Explore now', link: '#' },
+          ].map((item, index) => (
+            <div className='text-left py-5 px-6' key={index}>
+              <h2 className='text-xl font-bold text-secondary'>0{index + 1}</h2>
+              <h2 className='text-xl font-bold mb-5 mt-4 text-black'>{item.title}</h2>
+              <p className='text-gray-500'>{item.desc}</p>
+              <Link
+                href={item.link}
+                className='mt-2 block text-secondary underline'
+              >
+                {item.link_name}
+              </Link>
+            </div>
+          ))
+          }
+        </div>
+
+        <div className='mt-20 rounded-3xl overflow-hidden mx-auto max-w-5xl flex bg-black'>
+          <div className='text-left flex flex-col p-10 gap-10 max-w-md'>
+            <h2 className='text-3xl block font-bold text-white'>Join our developer community</h2>
+            <p className='text-gray-200'>
+              Join our community of developers from diverse backgrounds where you can work collaboratively, develop projects, ask questions and grow your career.
+            </p>
+            <div>
+              <JoinCommunity />
+            </div>
+          </div>
+          <div className='w-full'>
+            <Image
+              src='/card_bg.png'
+              alt='icon'
+              width={100}
+              height={100}
+              className='h-full w-fit'
+            />
+          </div>
+        </div>
+
+        <div className='mt-20 text-left max-w-5xl mx-auto'>
+          <h2 className='text-4xl font-bold'>Exx Updates</h2>
+          <p className='max-w-md mt-10 text-gray-600'>
+            Catch up with news, blog posts, events and other happenings within the EXX ecosystem.
+          </p>
+          <div className='flex gap-5 justify-between'>
+            {[
+              {src: '/card_img1.png'},
+              {src: '/card_img2.png'},
+              {src: '/card_img3.png'},
+            ].map((item, index) => (
+              <div className='bg-gray-100 mt-10 rounded-xl' key={index}>
+                <p className='inline-flex py-3 px-4 w-full justify-between'>
+                  <span className='inline-block font-bold text-sm'>Blockchain tips</span>
+                  <span className='inline-block font-light text-sm'>March 27, 2022</span>
+                </p>
+                <h2 className='mb-6 px-4 text-md font-bold'>The design language of the Cross Chain- pekele pekele</h2>
+                <Image
+                  src={item.src}
+                  alt='icon'
+                  width={100}
+                  height={100}
+                  className='w-full h-fit'
+                />
+              </div>
+            ))
+            }
+          </div>
+        </div>
+
+        <div className='mt-20 bg-black flex px-16 text-left py-24 text-white'>
+          <div className='w-full'>
+            <h2 className='text-3xl font-bold'>Stay Updated</h2>
+            <p className='max-w-xs mt-10'>
+              Subscribe to our newsletter. We only send important updates.
+            </p>
+          </div>
+          <div className='w-full flex justify-center items-center'>
+            <form className='flex items-baseline gap-3'>
+              <input
+                type='email'
+                className='px-5 py-3 bg-transparent border-gray-500 border-2 rounded-lg w-full block'
+                placeholder='Enter your email address'
+              />
+              <button className='bg-primary inline-flex text-white px-5 py-4 rounded-lg w-fit items-baseline justify-center gap-3'>
+                Subscribe
+                <svg xmlns='http://www.w3.org/2000/svg' width='11' height='10' viewBox='0 0 11 10' fill='none'>
+                  <path
+                    d='M3.12479 1.46449L9.01735 1.46449M9.01735 1.46449L9.01734 7.35705M9.01735 1.46449L1.94628 8.53556'
+                    stroke='white'
+                    strokeWidth='2.07917'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   )
