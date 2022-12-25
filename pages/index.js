@@ -4,18 +4,18 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className=''>
+    <div className='mt-10'>
       <div className='text-center'>
-        <h1 className='font-bold text-5xl'>
+        <h1 className='font-bold text-5xl px-10'>
           Start building apps with
           <span className='text-primary ml-2'>useful cases</span>
         </h1>
 
-        <p className='mt-10 max-w-md mx-auto'>
+        <p className='mt-10 max-w-md mx-auto px-10'>
           Welcome to the EXX Developer’s Guide. Now you can begin building your first DApp on EXX.
         </p>
 
-        <div className='flex justify-center my-8 gap-6'>
+        <div className='flex justify-center px-10 my-8 gap-6'>
           <button className='md:inline-flex hidden bg-primary font-bold px-20 py-4 w-fit rounded-xl text-white'>
             Get Started
           </button>
@@ -31,12 +31,12 @@ export default function Home() {
               />
             </svg>
           </button>
-          <div className='md:hidden'>
+          <div className='md:hidden w-full'>
             <JoinCommunity />
           </div>
         </div>
 
-        <div className='mx-auto rounded-3xl max-w-4xl shadow-md my-10'>
+        <div className='md:mx-auto mx-10 rounded-3xl max-w-4xl shadow-md my-10'>
           <iframe
             src='https://docs.exx.network'
             scrolling='no'
@@ -75,9 +75,10 @@ export default function Home() {
         </div>
 
         <div className='relative'>
-          <div className='bg-primary absolute top-0 right-0 left-0 bottom-[30px] -z-10'></div>
-          <h2 className='white text-white font-bold text-4xl py-20'>Your journey to developing your first dapp.</h2>
-          <div className='bg-white rounded-3xl flex justify-between max-w-5xl mx-auto p-7 shadow-md'>
+          <div className='md:hidden bg-slate-100 absolute top-0 right-0 left-0 bottom-0 -z-20'></div>
+          <div className='bg-primary absolute top-0 right-0 left-0 bottom-2/3 md:bottom-[30px] -z-10'></div>
+          <h2 className='text-white font-bold text-4xl py-20'>Your journey to developing your first dapp.</h2>
+          <div className='bg-white rounded-3xl mx-10 flex flex-col md:flex-row justify-between max-w-5xl md:mx-auto p-7 shadow-md'>
             {[
               { src: '/dev_icon1.png', title: 'Write Smart Contract', desc: 'Write instructions via code on the Exx network.', instry: '{solidity}' },
               { src: '/dev_icon2.png', title: 'Build Web Apps', desc: 'Build a frontend application for easier interaction', instry: '{next} {react}' },
@@ -101,10 +102,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='p-24 flex gap-20 mt-24 mx-auto max-w-5xl rounded-3xl bg-slate-100'>
+        <div className='p-24 flex flex-col md:flex-row gap-20 md:mt-24 mx-auto max-w-5xl md:rounded-3xl bg-slate-100'>
           <div className='flex-1'>
             <h2 className='text-4xl font-bold'>Get connected to the EXX Network</h2>
-            <div className='flex gap-5 mt-12'>
+            <div className='flex flex-col md:flex-row gap-5 mt-12'>
               <button className='bg-primary text-white px-5 py-4 rounded-lg w-full block'>
                 Add to Metamask
               </button>
@@ -129,15 +130,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='mt-20 flex justify-between max-w-5xl mx-auto p-7'>
+        <div className='mt-20 flex flex-col md:flex-row justify-between max-w-5xl mx-auto p-7'>
           {[
             { title: 'Documentation', desc: 'Everything needed to build on Exx', link_name: 'View docs', link: '#' },
             { title: 'Watch & Learn', desc: 'Solidity made easy with recordings', link_name: 'Watch now', link: '#' },
             { title: 'Blockchain Explorer', desc: 'Explore transactions on Exx', link_name: 'Explore now', link: '#' },
           ].map((item, index) => (
             <div className='text-left py-5 px-6' key={index}>
-              <h2 className='text-xl font-bold text-secondary'>0{index + 1}</h2>
-              <h2 className='text-xl font-bold mb-5 mt-4 text-black'>{item.title}</h2>
+              <h2 className='text-xl'>
+                <span className='md:block pr-2 font-bold text-secondary'>0{index + 1}</span>
+                <span className='md:block font-bold mb-5 mt-4 text-black'>{item.title}</span>
+              </h2>
               <p className='text-gray-500'>{item.desc}</p>
               <Link
                 href={item.link}
@@ -150,8 +153,8 @@ export default function Home() {
           }
         </div>
 
-        <div className='mt-20 rounded-3xl overflow-hidden mx-auto max-w-5xl flex bg-black'>
-          <div className='text-left flex flex-col p-10 gap-10 max-w-md'>
+        <div className='mt-20 rounded-3xl overflow-hidden mx-auto md:max-w-5xl flex flex-col md:flex-row bg-black'>
+          <div className='text-left flex flex-col p-10 gap-10 md:max-w-md'>
             <h2 className='text-3xl block font-bold text-white'>Join our developer community</h2>
             <p className='text-gray-200'>
               Join our community of developers from diverse backgrounds where you can work collaboratively, develop projects, ask questions and grow your career.
@@ -166,23 +169,23 @@ export default function Home() {
               alt='icon'
               width={100}
               height={100}
-              className='h-full w-fit'
+              className='md:h-full md:w-fit w-full h:fit'
             />
           </div>
         </div>
 
-        <div className='mt-20 text-left max-w-5xl mx-auto'>
+        <div className='mt-20 md:px-0 px-10 text-left max-w-5xl mx-auto'>
           <h2 className='text-4xl font-bold'>Exx Updates</h2>
           <p className='max-w-md mt-10 text-gray-600'>
             Catch up with news, blog posts, events and other happenings within the EXX ecosystem.
           </p>
-          <div className='flex gap-5 justify-between'>
+          <div className='flex flex-col md:flex-row gap-5 justify-between'>
             {[
               {src: '/card_img1.png'},
               {src: '/card_img2.png'},
               {src: '/card_img3.png'},
             ].map((item, index) => (
-              <div className='bg-gray-100 mt-10 rounded-xl' key={index}>
+              <div className='bg-slate-100 md:bg-gray-100 mt-10 rounded-xl' key={index}>
                 <p className='inline-flex py-3 px-4 w-full justify-between'>
                   <span className='inline-block font-bold text-sm'>Blockchain tips</span>
                   <span className='inline-block font-light text-sm'>March 27, 2022</span>
@@ -201,7 +204,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='mt-20 bg-black flex px-16 text-left py-24 text-white'>
+        <div className='mt-20 bg-black flex md:gap-0 gap-10 flex-col md:flex-row px-10 md:px-16 text-left py-24 text-white'>
           <div className='w-full'>
             <h2 className='text-3xl font-bold'>Stay Updated</h2>
             <p className='max-w-xs mt-10'>
@@ -209,13 +212,13 @@ export default function Home() {
             </p>
           </div>
           <div className='w-full flex justify-center items-center'>
-            <form className='flex items-baseline gap-3'>
+            <form className='flex flex-col md:w-fit w-full md:flex-row items-baseline gap-3'>
               <input
                 type='email'
                 className='px-5 py-3 bg-transparent border-gray-500 border-2 rounded-lg w-full block'
                 placeholder='Enter your email address'
               />
-              <button className='bg-primary inline-flex text-white px-5 py-4 rounded-lg w-fit items-baseline justify-center gap-3'>
+              <button className='bg-primary md:w-fit w-full inline-flex text-white px-5 py-4 rounded-lg items-baseline justify-center gap-3'>
                 Subscribe
                 <svg xmlns='http://www.w3.org/2000/svg' width='11' height='10' viewBox='0 0 11 10' fill='none'>
                   <path
