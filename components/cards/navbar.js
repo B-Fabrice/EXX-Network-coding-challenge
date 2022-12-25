@@ -88,31 +88,46 @@ export default function Navbar() {
           >
             <path d='M1.61111 19H27.3889C28.275 19 29 18.2875 29 17.4167C29 16.5458 28.275 15.8333 27.3889 15.8333H1.61111C0.725 15.8333 0 16.5458 0 17.4167C0 18.2875 0.725 19 1.61111 19ZM1.61111 11.0833H27.3889C28.275 11.0833 29 10.3708 29 9.5C29 8.62917 28.275 7.91667 27.3889 7.91667H1.61111C0.725 7.91667 0 8.62917 0 9.5C0 10.3708 0.725 11.0833 1.61111 11.0833ZM0 1.58333C0 2.45417 0.725 3.16667 1.61111 3.16667H27.3889C28.275 3.16667 29 2.45417 29 1.58333C29 0.7125 28.275 0 27.3889 0H1.61111C0.725 0 0 0.7125 0 1.58333Z' fill='#111315' />
           </svg>
-          <div className={`absolute top-28 right-0 left-0 ${!isMenu ? 'hidden' : ''}`}>
-            <div>
-              {['About', 'Developers', 'Blog'].map((item, index) => (
-                <Link
-                  key={index}
-                  href=''
-                  className='block px-10 hover:bg-gray-100 transition duration-200 ease-in-out font-bold py-4'
+          <div className={`fixed z-20 h-screen backdrop-blur top-0 right-0 left-0 ${!isMenu ? 'hidden' : ''}`}>
+            <div className='bg-white'>
+              <div className='flex justify-end pt-8 px-3'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={3}
+                  stroke='currentColor'
+                  className='w-10 h-10 cursor-pointer'
+                  onClick={() => setIsMenu(!isMenu)}
                 >
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <div>
-              <button className='bg-primary font-bold inline-flex px-8 py-4 lg:w-fit w-full lg:rounded-xl text-white'>
-                Connect Wallet
-                <svg className='ml-1' width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                  <path
-                    d='M9.51044 7.48014L16.842 7.48014M16.842 7.48014L16.842 14.2987M16.842 7.48014L8.04412 15.6624'
-                    stroke='#F5F5F5'
-                    strokeWidth='2.07917'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12' />
                 </svg>
-              </button>
+              </div>
+              <div>
+                {['About', 'Developers', 'Blog'].map((item, index) => (
+                  <Link
+                    key={index}
+                    href=''
+                    className='block px-10 hover:bg-gray-100 transition duration-200 ease-in-out font-bold py-4'
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </div>
+              <div>
+                <button className='bg-primary font-bold inline-flex px-8 py-4 lg:w-fit w-full lg:rounded-xl text-white'>
+                  Connect Wallet
+                  <svg className='ml-1' width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path
+                      d='M9.51044 7.48014L16.842 7.48014M16.842 7.48014L16.842 14.2987M16.842 7.48014L8.04412 15.6624'
+                      stroke='#F5F5F5'
+                      strokeWidth='2.07917'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
