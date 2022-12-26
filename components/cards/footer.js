@@ -4,8 +4,8 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className='py-16 px-10 md:px-14'>
-      <div className='flex md:justify-start justify-between flex-wrap md:flex-nowrap gap-10'>
-        <div className='md:max-w-xs md:min-w-[300px] w-full'>
+      <div className='flex md:justify-start justify-between flex-wrap lg:flex-nowrap gap-10'>
+        <div className='lg:max-w-xs lg:min-w-[300px] w-full'>
           <Image
             src='/logo.png'
             width={100}
@@ -13,9 +13,9 @@ export default function Footer() {
             className=''
             alt='logo'
           />
-          <p className='text-gray-800 text-lg md:text-xl md:max-w-none max-w-xs py-4'>EXX builds on the efficacy of Ethereum, it is faster, powerful and more secured</p>
+          <p className='text-gray-800 text-lg md:text-xl lg:max-w-none max-w-xs py-4'>EXX builds on the efficacy of Ethereum, it is faster, powerful and more secured</p>
         </div>
-        <div className='md:w-full w-1/3'>
+        <div className='lg:w-full w-1/3'>
           <h2 className='md:text-2xl text-xl font-bold'>General</h2>
           {[
             { name: 'About' },
@@ -33,7 +33,7 @@ export default function Footer() {
           ))
           }
         </div>
-        <div className='md:w-full w-1/3'>
+        <div className='lg:w-full w-1/3'>
           <h2 className='md:text-2xl text-xl font-bold'>Explore</h2>
           {[
             { name: 'Documentation' },
@@ -51,7 +51,7 @@ export default function Footer() {
           ))
           }
         </div>
-        <div className='md:w-full w-1/3'>
+        <div className='lg:w-full w-1/3'>
           <h2 className='md:text-2xl text-xl font-bold'>Apply</h2>
           {[
             { name: 'Dev. Incubator' },
@@ -68,7 +68,7 @@ export default function Footer() {
           ))
           }
         </div>
-        <div className='md:w-full w-1/3'>
+        <div className='lg:w-full w-1/3'>
           <h2 className='md:text-2xl text-xl font-bold'>Follow Us</h2>
           {[
             { name: 'Twitter' },
