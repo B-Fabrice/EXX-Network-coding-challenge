@@ -26,4 +26,4 @@ run project
 ```
     
 ##  Demo
-[deployed demo preview](https://vercel.com/b-fabrice/web3-challenge)
+[deployed demo preview](https://web3-challenge-c3cjced93-b-fabrice.vercel.app)
