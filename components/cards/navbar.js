@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useWeb3Modal } from '@web3modal/react'
+import { useAccount } from 'wagmi'
 
 export default function Navbar() {
   const [isMenu, setIsMenu] = useState(false)
   const [isShow, setIsShow] = useState(false)
+  const { isConnected } = useAccount()
+  const { open } = useWeb3Modal()
+
   return (
     <nav className='mx-auto py-4 md:py-6 px-3 md:px-20 flex justify-between items-center relative'>
       <div>
@@ -65,8 +70,11 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <div>
-            <button className='bg-primary font-bold inline-flex px-8 py-4 rounded-xl text-white'>
+          { !isConnected && <div>
+            <button
+              className='bg-primary font-bold inline-flex px-8 py-4 rounded-xl text-white'
+              onClick={() => open()}
+            >
               Connect Wallet
               <svg className='ml-1' width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <path
@@ -78,7 +86,7 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-          </div>
+          </div>}
         </div>
         <div className='lg:hidden'>
           <svg
